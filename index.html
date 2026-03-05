@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- 全ファイル共通のcss -->
+    <link rel="stylesheet" href="css/common.css">
+    <!-- 各ファイルのcss -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- フォント読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+   <title>メインページ</title>
+</head>
+<body>
+    <!-- ローディング -->
+    <div id="loading-menu" style="display: flex;">
+        <div id="video-frame"></div>
+        <!-- box-shadow -->
+        <div id="box-shadow"></div> 
+    </div>
+
+    <!-- ヘッダー -->
+    <div id="header">
+        <div id="header-bg"></div>
+        <div id="year-scale">
+            <div id="year-container">
+                <p class="year">2</p>
+                <p class="year">0</p>
+                <p class="year">2</p>
+                <p class="year">6</p>
+                <p>年</p>
+            </div>
+            <div id="year-frame"></div>
+        </div>
+    </div>
+    <div id="after-load" style="display: none;">
+        <div id="game-container">
+            <div id="prev-game" class="games"></div>
+            <div id="current-game" class="games" style="background-image:url(images/tutorial.png);"></div>
+            <div id="next-game" class="games" style="background-image:url(images/mastermind.png);"></div>
+        </div>
+        <div id="game-texts">
+            <p id="game-title"></p>
+            <p id="game-description"></p>
+        </div>
+        <div id="stage-bg"></div>
+
+        <!-- チュートリアル -->
+        <div id="tutorial">
+            <p id="tutorial-text"></p>
+            <p id="tutorial-step" style="visibility: hidden;">⏏</p>
+        </div>
+
+        <!-- 時計 -->
+        <div id="clock" style="display: none;">
+            <div id="clock-bg"></div>
+            <div id="clock-container">
+                <div id="hour-hand">
+                    <img src="images/hour-hand.png">
+                </div>
+                <div id="minute-hand">
+                    <img src="images/minute-hand.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 各ファイルのjavascript -->
+    <script src="script/main.js"></script>
+</body>
+</html>
