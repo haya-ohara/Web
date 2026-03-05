@@ -1,0 +1,284 @@
+body{
+    background-color: rgb(26, 25, 32);
+    background-size: 100%;
+    background-image: url(../images/main-bg.jpg);
+}
+/* ローディング */
+#loading-menu{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    place-items: center;
+    justify-content: center;
+    z-index: 97;
+    background-image: url(../images/bg.jpeg);
+    background-size: cover;
+    background-position: left 0 top 0;
+    transition: background-position 4s cubic-bezier(.5,0,.5,1);
+
+    opacity: 0;
+}
+/*ローディングのbox-shadow */
+#box-shadow{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    box-shadow:  
+    0px 20px 50px inset #3d1d00,
+    0px -20px 50px inset #3d1d00;
+    z-index: 100;
+}
+/* 背景で動く動画フレーム */
+#video-frame{
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background-image: url(../images/video-frame.png);
+    background-size: cover;
+    opacity: 0.05;
+    animation: bgSlider 60s infinite linear;
+}
+@keyframes bgSlider {
+    0%{
+        background-position: 0 0;
+    }
+    100%{
+        background-position: 91.5% 0;
+    }
+}
+
+
+/* ヘッダー */
+#header{
+    display: flex;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    place-items: center;
+    justify-content: center;
+    z-index: 98;
+    background-size: cover;
+    background-position: left 0 top 0;
+    transition: background-position 4s cubic-bezier(.17,.89,.32,1.25);
+
+    opacity: 0;
+}
+/* ヘッダー背景画像 */
+#header-bg{
+    width: 100%;
+    height: 100px;
+    background-image: url(../images/header-bg-test.jpg);
+    background-size: 100% 100%;
+    position: absolute;
+    box-shadow: 20px 0 20px #3d1d00;
+    transform: translateY(-600%);
+}
+
+/* スロットの枠 */
+#year-frame{
+    position: absolute;
+    background-image: url(../images/year-frame.png);
+    background-size: contain;
+    background-position: center;
+    height: 150px;
+    width: 340px;
+    filter: drop-shadow(0px 0px 10px #3d1d00);
+}
+/* スロットの数字 */
+#year-container p{
+    color: #3d1d00;
+    font-size: 4rem;
+    z-index: 99;
+    text-align: center;
+    border-right: 3px dotted;
+    padding: 100px 0;
+}
+/* スロット＆枠のまとめ */
+#year-scale{
+    position: relative;
+    place-items: center;
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    width: 340px;
+}
+/* スロットのまとめ */
+#year-container{
+    display: flex;
+    position: absolute;
+    height: 90px;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid;
+    box-shadow: 
+    0px 5px 10px inset #3d1d00,
+    0px -5px 10px inset #3d1d00;
+    background-image: url(../images/year-bg.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* ステージ */
+#stage-bg{
+    width: 100%;
+    height: 100vh;
+    background-image: url(../images/stage.png);
+    background-size: 100% 100%;
+}
+#after-load{
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+}
+
+/* 時計 */
+#clock{
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    width: 300px;
+    height: 450px;
+    place-items: center;
+    z-index: 201;
+}
+#clock-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/pocket-watch.png);
+    background-size: contain;
+    background-position: center bottom;
+    filter: drop-shadow(0 0 5px #000);
+}
+#clock-container{
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    bottom: 0;
+    display: flex;
+    place-items: center;
+    justify-content: center;
+}
+#minute-hand{
+    position: absolute;
+    height: 187px;
+    width: 14.1px;
+}
+#hour-hand{
+    position: absolute;
+    height: 125px;
+    width: 13.7px;
+    transform: rotate(180deg);
+}
+#hour-hand img:hover,#minute-hand img:hover{
+    filter:
+    drop-shadow(0 1px 2px #ffffff80)
+    drop-shadow(0 -1px 2px #ffffff80)
+    drop-shadow(1px 0 2px #ffffff80)
+    drop-shadow(-1px 0 2px #ffffff80);
+}
+#clock img{
+    width: 100%;
+    height: auto;
+    -webkit-user-drag: none;
+}
+@keyframes rotate{
+    from{transform: rotate(0);}
+    to{transform:rotate(360deg)}
+}
+
+/* チュートリアル */
+#tutorial{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+    height: 200px;
+    bottom: 0;
+
+    font-size: 1.4rem;
+    color: #fff;
+
+    background-color: #00000080;
+    z-index: 200;
+
+    transform: translateY(100%);
+}
+#tutorial-text{
+    padding: 0 20px;
+    position: relative;
+    width: fit-content;
+    text-align: center;
+}
+#tutorial-step{
+    position: relative;
+    text-align: center;
+    animation: step 1s infinite linear;
+    transform: rotate(180deg);
+}
+@keyframes step {
+    0%{top: 0;}
+    50%{top: 5px;}
+    100%{top: 0;}
+}
+
+/* ゲーム表示 */
+#game-container{
+    position: absolute;
+    width: 100vw;
+    height: 80vh;
+    overflow: hidden;
+}
+#prev-game,#next-game{
+    width: 80px;
+    height: 80px;
+    top: 400px;
+}
+#prev-game{
+    left: 0;
+    background-color: antiquewhite;
+}
+#next-game{
+    right: 0;
+    background-color: antiquewhite;
+}
+#current-game{
+    width: 200px;
+    height: 200px;
+    background-color: antiquewhite;
+    top: 320px;
+    z-index: 50;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.disable-link{
+    pointer-events: none;
+}
+.games{
+    position: absolute;
+    background-size: cover;
+    filter:
+    drop-shadow(0 1px 2px #ffffff80)
+    drop-shadow(0 -1px 2px #ffffff80)
+    drop-shadow(1px 0 2px #ffffff80)
+    drop-shadow(-1px 0 2px #ffffff80);
+}
+
+/* ゲームのテキスト */
+#game-texts{
+    position: absolute;
+    top: 150px;
+    width: 600px;
+    color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+#game-title{
+    font-size: 2rem;
+}
+#game-description{
+    margin-top: 20px;
+}

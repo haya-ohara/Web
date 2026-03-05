@@ -1,0 +1,172 @@
+body{
+    background-color: rgb(46, 47, 73);
+}
+#tutorial-wrapper{
+    color: #fff;
+    background-color: #5d6f98;
+}
+#play-container{
+    width: 80%;
+    width: 805.83px;
+    min-width: 805.83px;
+    height: 50%;
+}
+#mastermind-board{
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/mastermind/mastermind-board.png);
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+.circle{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+    background-image: url(../images/mastermind/ball-hole.png);
+}
+
+/* ボール選択 */
+#ball-select{
+    position: absolute;
+    width: 220px;
+    height: 220px;
+}
+#select-bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 60px solid rgba(68, 68, 68, 0.5);
+}
+#select-border{
+    position: absolute;
+    width: 220px;
+    height: 220px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%)rotate(-22.5deg);
+    border-radius: 50%;
+
+    background: conic-gradient(
+    from 0deg,
+    #ffffff2d 0deg 45deg,
+    transparent 45deg 360deg
+  );
+}
+.select-item{
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    background-size: cover;
+}
+#de-select{
+    border-radius: 50%;
+    background-size: 60px;
+    background-image: url(../images/checker.jpg);
+}
+#ball-1{background-image: url(../images/mastermind/red-ball.png);}
+#ball-2{background-image: url(../images/mastermind/green-ball.png);}
+#ball-3{background-image: url(../images/mastermind/blue-ball.png);}
+#ball-4{background-image: url(../images/mastermind/cyan-ball.png);}
+#ball-5{background-image: url(../images/mastermind/magenta-ball.png);}
+#ball-6{background-image: url(../images/mastermind/yellow-ball.png);}
+#ball-7{background-image: url(../images/mastermind/black-ball.png);}
+.emit{
+    filter:
+    drop-shadow(0 1px 2px #ffffff80)
+    drop-shadow(0 -1px 2px #ffffff80)
+    drop-shadow(1px 0 2px #ffffff80)
+    drop-shadow(-1px 0 2px #ffffff80);
+}
+.emit-animation{
+    animation: emitAnim 2s linear infinite;
+}
+@keyframes emitAnim {
+    0%{
+        filter:
+        drop-shadow(0 1px 2px #ffffff44)
+        drop-shadow(0 -1px 2px #ffffff44)
+        drop-shadow(1px 0 2px #ffffff44)
+        drop-shadow(-1px 0 2px #ffffff44);
+    }
+    50%{
+        filter:none;
+    }
+    100%{
+        filter:
+        drop-shadow(0 1px 2px #ffffff44)
+        drop-shadow(0 -1px 2px #ffffff44)
+        drop-shadow(1px 0 2px #ffffff44)
+        drop-shadow(-1px 0 2px #ffffff44);
+    }
+}
+
+/* 上方のピン */
+.pin{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-size: cover;
+    background-image: url(../images/mastermind/ball-hole.png);
+}
+
+/* 確認ボタン */
+#submit{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 50px;
+}
+.disable-btn{
+    opacity: 0.5;
+}
+
+/* リザルト */
+#result-container{
+    position: absolute;
+    width: 500px;
+    height: 400px;
+    background-color: #5d6f98;
+    color: white;
+    border-radius: 10px;
+    border: 2px solid #fff;
+}
+#result-title{
+    font-size: 2rem;
+    border-bottom: 2px solid #fff;
+    padding-top: 10px;
+    padding-bottom:10px;
+    background-color: #4a5f90;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+#result-nums{
+    margin-top: 50px;
+    padding-left: 2.525rem;
+    letter-spacing: 2.525rem;
+}
+#result-ball-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 60px;
+}
+#result-ball-container *{
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    background-image: url(../images/mastermind/blue-ball.png);
+}
+#result-container p{
+    text-align: center;
+}
+#result-comment{
+    font-size: 1.5rem;
+    margin: 50px auto 30px;
+}
+#retry-btn{
+    border-color: white;
+    display: block;
+    margin: auto;
+}

@@ -1,0 +1,7 @@
+:root{
+    --main-font:"Kaisei Decol", "serif";
+}
+html{
+    font-family: var(--main-font);
+    user-select: none;
+}
