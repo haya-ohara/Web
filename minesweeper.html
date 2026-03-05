@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- リセットcss -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- 全ファイル共通のcss -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 各ファイルのcss -->
+    <link rel="stylesheet" href="css/minesweeper.css">
+
+    <!-- フォント読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+    <title>Minesweeper</title>
+</head>
+<body>
+    <div id="main-menu">
+        <img id="icon" src="images/minesweeper.png">
+        <button id="play-btn" class="btn btn-scale">プレイ</button>
+        <button id="tutorial-btn" class="btn btn-scale">遊び方</button>
+        <button id="exit-btn" class="btn btn-scale">退出</button>
+    </div>
+    <div id="tutorial-menu" style="display:none">
+        <div id="tutorial-wrapper">
+            <div id="tutorial-image"></div>
+            <div id="tutorial-text-buttons">
+                <button id="tutorial-prev" class="btn-scale">&lt;</button>
+                <p></p>
+                <button id="tutorial-next" class="btn-scale">&gt;</button>
+            </div>
+        </div>
+        <button id="tutorial-return" class="btn btn-scale">戻る</button>
+    </div>
+    <div id="play-menu" style="display: none;">
+        <div id="play-container">
+            <div id="choose-mode">
+                <button id="easy" class="btn btn-scale">イージー</button>
+                <button id="medium" class="btn btn-scale">ノーマル</button>
+                <button id="hard" class="btn btn-scale">ハード</button>
+            </div>
+            <div id="board" style="display: none;"></div>
+        </div>
+        <div id="result" style="display: none;">
+                <div id="result-wrapper">
+                    <p id="result-title"></p>
+                    <p id="result-comment"></p>
+                    <button id="retry" class="btn btn-scale">モード選択へ</button>
+                </div>
+            </div>
+        <button id="play-tutorial" class="btn btn-scale">遊び方</button>
+        <button id="play-return" class="btn btn-scale">戻る</button>
+    </div>
+
+    <!-- 各ファイルのjavascript -->
+    <script src="script/minesweeper.js"></script>
+    <!-- 全ファイル共通のjavascript -->
+    <script src="script/base.js"></script>
+</body>
+</html>
