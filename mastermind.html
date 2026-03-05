@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- リセットcss -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <!-- 全ファイル共通のcss -->
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/base.css">
+    <!-- 各ファイルのcss -->
+    <link rel="stylesheet" href="css/mastermind.css">
+
+    <!-- フォント読み込み -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kaisei+Decol&family=M+PLUS+Rounded+1c:wght@700&display=swap" rel="stylesheet">
+    <title>Mastermind</title>
+</head>
+<body>
+    <div id="main-menu">
+        <img id="icon" src="images/mastermind.png">
+        <button id="play-btn" class="btn btn-scale">プレイ</button>
+        <button id="tutorial-btn" class="btn btn-scale">遊び方</button>
+        <button id="exit-btn" class="btn btn-scale">退出</button>
+    </div>
+    <div id="tutorial-menu" style="display:none;">
+        <div id="tutorial-wrapper">
+            <div id="tutorial-image"></div>
+            <div id="tutorial-text-buttons">
+                <button id="tutorial-prev" class="btn-scale">&lt;</button>
+                <p></p>
+                <button id="tutorial-next" class="btn-scale">&gt;</button>
+            </div>
+        </div>
+        <button id="tutorial-return" class="btn btn-scale">戻る</button>
+    </div>
+    <div id="play-menu" style="display: none;">
+        <div id="play-container">
+            <div id="mastermind-board">
+                <div id="circles"></div>
+            </div>
+            
+        </div>
+        <div id="ball-select" style="display:none;">
+            <div id="select-border"></div>
+            <div id="select-bg"></div>
+            <div id="de-select" class="select-item"></div>
+            <div id="ball-1" class="ball select-item"></div>
+            <div id="ball-2" class="ball select-item"></div>
+            <div id="ball-3" class="ball select-item"></div>
+            <div id="ball-4" class="ball select-item"></div>
+            <div id="ball-5" class="ball select-item"></div>
+            <div id="ball-6" class="ball select-item"></div>
+            <div id="ball-7" class="ball select-item"></div>
+        </div>
+        <div id="result-container" style="display: none;">
+            <p id="result-title">結果</p>
+            <p id="result-nums">1 2 3 4</p>
+            <div id="result-ball-container">
+                <div class="result-ball"></div>
+                <div class="result-ball"></div>
+                <div class="result-ball"></div>
+                <div class="result-ball"></div>
+            </div>
+            <p id="result-comment"></p>
+            <button  id="retry-btn" class="btn btn-scale">リトライ</button>
+        </div>
+        <button id="submit" class="btn btn-scale disable-btn">確認</button>
+        <button id="play-tutorial" class="btn btn-scale">遊び方</button>
+        <button id="play-return" class="btn btn-scale">戻る</button>
+    </div>
+
+    <!-- 各ファイルのjavascript -->
+    <script src="script/mastermind.js"></script>
+    <!-- 全ファイル共通のjavascript -->
+    <script src="script/base.js"></script>
+</body>
+</html>
